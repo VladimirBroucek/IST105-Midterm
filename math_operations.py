@@ -46,7 +46,6 @@ def main():
     print(f"- Input 2: {number2}")
     print(f"- Result: {calculation_result}\n")
     print(f"This result was processed on my EC2 instance with Public IP: {public_ip}")
-    print(f"Access the application via Load Balancer URL: http://&lt;load-balancer-dns&gt;/math_form.php")
     print("</pre>")
 
 if __name__ == "__main__":

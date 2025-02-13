@@ -14,7 +14,7 @@ def calculation(number1, number2, operation):
             return f"Division by zero is not possible"
 
 def main():
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         print("Error: Invalid input")
         return
 

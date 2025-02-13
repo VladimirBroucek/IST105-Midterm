@@ -33,15 +33,21 @@ def main():
     elif calculation_result < 0:
         calculation_result += 50
 
-    print("<html>")
-    print("<head><title>Calculation Results</title></head>")
-    print("<body>")
-    print(f"f<p>Operation: {operation}</p>")
-    print(f"<p>Number 1: {number1}</p>")
-    print(f"<p>Number 2: {number2}</p>")
-    print(f"<p>Result: {calculation_result}</p>")
-    print("</body>")
-    print("</html>")
+    import requests
+    try:
+        public_ip = requests.get("https://api64.ipify.org").text
+    except:
+        public_ip = "<EC2-Public-IP>"
+
+    print("<pre>")
+    print("Result:")
+    print(f"- Operation: {operation}")
+    print(f"- Input 1: {number1}")
+    print(f"- Input 2: {number2}")
+    print(f"- Result: {calculation_result}\n")
+    print(f"This result was processed on my EC2 instance with Public IP: {public_ip}")
+    print(f"Access the application via Load Balancer URL: http://&lt;load-balancer-dns&gt;/math_form.php")
+    print("</pre>")
 
 if __name__ == "__main__":
     main()
